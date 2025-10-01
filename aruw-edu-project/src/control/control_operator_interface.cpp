@@ -33,13 +33,14 @@ ControlOperatorInterface::ControlOperatorInterface(Remote &remote) : remote(remo
 // definitions
 
 float getChassisTankLeftInput(){
-    float leftInput = getChannel(Remote::Channel::LEFT_VERTICAL);
+    float leftInput = limitVal(Remote::getChannel(Remote::Channel::LEFT_VERTICAL), -1.0,1.0);
 
     return leftInput;
 }
 
 float getChassisTankRightInput(){
-    float rightInput = getChannel(Remote::Channel::RIGHT_VERTICAL);
+    float rightInput = limitVal(Remote::getChannel(Remote::Channel::RIGHT_VERTICAL), -1.0,1.0);
+
 
     return rightInput;
 }
