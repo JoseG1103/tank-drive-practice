@@ -34,17 +34,14 @@ ControlOperatorInterface::ControlOperatorInterface(Remote &remote) : remote(remo
 
 float ControlOperatorInterface::getChassisTankLeftInput()
 {
-    float leftInput = limitVal(remote.getChannel(Remote::Channel::LEFT_VERTICAL), -1.0,1.0);
-
-    return leftInput;
+    const float kRawLeftInput = remote.getChannel(Remote::Channel::LEFT_VERTICAL);
+    return limitVal(kRawLeftInput, -1.0f, 1.0f);
 }
 
 float ControlOperatorInterface::getChassisTankRightInput()
 {
-    float rightInput = limitVal(remote.getChannel(Remote::Channel::RIGHT_VERTICAL), -1.0,1.0);
-
-
-    return rightInput;
-}
+    const float kRawRightInput = remote.getChannel(Remote::Channel::LEFT_VERTICAL);
+    return limitVal(kRawRightInput, -1.0f, 1.0f); 
 
 }  // namespace control
+}
