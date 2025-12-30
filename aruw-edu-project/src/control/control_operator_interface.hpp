@@ -36,6 +36,9 @@ public:
     // STEP 1 (Tank Drive): Add getChassisTankLeftInput and getChassisTankRightInput function
     // declarations
 
+    mockable float getChassisTankLeftInput();
+    mockable float getChassisTankRightInput();
+
 private:
     tap::communication::serial::Remote &remote;
 };
